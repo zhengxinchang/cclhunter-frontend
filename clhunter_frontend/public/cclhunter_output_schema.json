@@ -1,0 +1,257 @@
+{
+  "title": "Root Schema",
+  "type": "object",
+  "default": {},
+  "required": [
+    "hits",
+    "similarity",
+    "sfu_identity"
+  ],
+  "properties": {
+    "hits": {
+      "title": "The hits Schema",
+      "type": "object",
+      "default": {},
+      "required": [
+        "name_snp",
+        "identity",
+        "lkg",
+        "lkg_topology",
+        "name_sfu",
+        "correlation",
+        "pvalue"
+      ],
+      "properties": {
+        "name_snp": {
+          "title": "The name_snp Schema",
+          "type": "string",
+          "default": ""
+        },
+        "identity": {
+          "title": "The identity Schema",
+          "type": "number",
+          "default": 0.0
+        },
+        "lkg": {
+          "title": "The lkg Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "level",
+            "lkg"
+          ],
+          "properties": {
+            "level": {
+              "title": "The level Schema",
+              "type": "string",
+              "default": ""
+            },
+            "lkg": {
+              "title": "The lkg Schema",
+              "type": "array",
+              "default": [],
+              "items": {
+                "title": "A Schema",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "lkg_topology": {
+          "title": "The lkg_topology Schema",
+          "type": "array",
+          "default": [],
+          "items": {
+            "title": "A Schema",
+            "type": "object",
+            "required": [
+              "name",
+              "children"
+            ],
+            "properties": {
+              "name": {
+                "title": "The name Schema",
+                "type": "string"
+              },
+              "children": {
+                "title": "The children Schema",
+                "type": "array",
+                "items": {
+                  "title": "A Schema",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "name_sfu": {
+          "title": "The name_sfu Schema",
+          "type": "string",
+          "default": ""
+        },
+        "correlation": {
+          "title": "The correlation Schema",
+          "type": "number",
+          "default": 0.0
+        },
+        "pvalue": {
+          "title": "The pvalue Schema",
+          "type": "number",
+          "default": 0.0
+        }
+      }
+    },
+    "similarity": {
+      "title": "The similarity Schema",
+      "type": "object",
+      "default": {},
+      "required": [
+        "this",
+        "this_seqstr",
+        "similar"
+      ],
+      "properties": {
+        "this": {
+          "title": "The this Schema",
+          "type": "string",
+          "default": ""
+        },
+        "this_seqstr": {
+          "title": "The this_seqstr Schema",
+          "type": "string",
+          "default": ""
+        },
+        "similar": {
+          "title": "The similar Schema",
+          "type": "array",
+          "default": [],
+          "items": {
+            "title": "A Schema",
+            "type": "object",
+            "required": [
+              "cvclid",
+              "similarity",
+              "seqstr",
+              "seqstr_related"
+            ],
+            "properties": {
+              "cvclid": {
+                "title": "The cvclid Schema",
+                "type": "string"
+              },
+              "similarity": {
+                "title": "The similarity Schema",
+                "type": "number"
+              },
+              "seqstr": {
+                "title": "The seqstr Schema",
+                "type": "string"
+              },
+              "seqstr_related": {
+                "title": "The seqstr_related Schema",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "sfu_identity": {
+      "title": "The sfu_identity Schema",
+      "type": "object",
+      "default": {},
+      "required": [
+        "CVCL_0002",
+        "CVCL_2162"
+      ],
+      "properties": {
+        "CVCL_0002": {
+          "title": "The CVCL_0002 Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "correlation",
+            "pvalue",
+            "rank",
+            "sfu",
+            "lm"
+          ],
+          "properties": {
+            "correlation": {
+              "title": "The correlation Schema",
+              "type": "number",
+              "default": 0.0
+            },
+            "pvalue": {
+              "title": "The pvalue Schema",
+              "type": "number",
+              "default": 0.0
+            },
+            "rank": {
+              "title": "The rank Schema",
+              "type": "string",
+              "default": ""
+            },
+            "sfu": {
+              "title": "The sfu Schema",
+              "type": "string",
+              "default": ""
+            },
+            "lm": {
+              "title": "The lm Schema",
+              "type": "array",
+              "default": [],
+              "items": {
+                "title": "A Schema",
+                "type": "number"
+              }
+            }
+          }
+        },
+        "CVCL_2162": {
+          "title": "The CVCL_2162 Schema",
+          "type": "object",
+          "default": {},
+          "required": [
+            "correlation",
+            "pvalue",
+            "rank",
+            "sfu",
+            "lm"
+          ],
+          "properties": {
+            "correlation": {
+              "title": "The correlation Schema",
+              "type": "number",
+              "default": 0.0
+            },
+            "pvalue": {
+              "title": "The pvalue Schema",
+              "type": "number",
+              "default": 0.0
+            },
+            "rank": {
+              "title": "The rank Schema",
+              "type": "string",
+              "default": ""
+            },
+            "sfu": {
+              "title": "The sfu Schema",
+              "type": "string",
+              "default": ""
+            },
+            "lm": {
+              "title": "The lm Schema",
+              "type": "array",
+              "default": [],
+              "items": {
+                "title": "A Schema",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
