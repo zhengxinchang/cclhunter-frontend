@@ -160,58 +160,9 @@
       "title": "The sfu_identity Schema",
       "type": "object",
       "default": {},
-      "required": [
-        "CVCL_0002",
-        "CVCL_2162"
-      ],
-      "properties": {
-        "CVCL_0002": {
-          "title": "The CVCL_0002 Schema",
+      "patternProperties": {
+        "CVCL_.*": {
           "type": "object",
-          "default": {},
-          "required": [
-            "correlation",
-            "pvalue",
-            "rank",
-            "sfu",
-            "lm"
-          ],
-          "properties": {
-            "correlation": {
-              "title": "The correlation Schema",
-              "type": "number",
-              "default": 0.0
-            },
-            "pvalue": {
-              "title": "The pvalue Schema",
-              "type": "number",
-              "default": 0.0
-            },
-            "rank": {
-              "title": "The rank Schema",
-              "type": "string",
-              "default": ""
-            },
-            "sfu": {
-              "title": "The sfu Schema",
-              "type": "string",
-              "default": ""
-            },
-            "lm": {
-              "title": "The lm Schema",
-              "type": "array",
-              "default": [],
-              "items": {
-                "title": "A Schema",
-                "type": "number"
-              }
-            }
-          }
-        },
-        "CVCL_2162": {
-          "title": "The CVCL_2162 Schema",
-          "type": "object",
-          "default": {},
           "required": [
             "correlation",
             "pvalue",
