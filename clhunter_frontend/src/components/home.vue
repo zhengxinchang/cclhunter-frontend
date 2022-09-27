@@ -21,15 +21,16 @@
             <span class="white--text ">Version: 1.0</span>
           </v-sheet>
           <v-row align="center">
-            <v-col xl="6" lg="6" md="6" sm="12" cols="12">
+            <v-col cols="12" lg="6" md="6" sm="12" xl="6">
               <v-sheet class="z-transparent">
                 <v-row>
-                  <v-col cols="12" class="px-16">
+                  <v-col class="px-16" cols="12">
                     <div>
-                      <v-img :src="$store.state.logo" class="mx-auto" aspect-ratio="16/9" contain height="100"></v-img>
+                      <v-img :src="$store.state.logo" aspect-ratio="16/9" class="mx-auto" contain height="100"></v-img>
                     </div>
                     <div class="text-h5 pb-4 white--text" style="line-height: 65px;">
-                      Accurate and fast cancer cell line authentication method using VTE scheme
+                      CCLHunter: an accurate, sensitive and easy used cancer cell line authentication toolkit and
+                      webserver
                     </div>
                     <div class="text-h5 pb-4 white--text text-left">
                       Introduction
@@ -38,16 +39,20 @@
                       Cancer cell lines have become the paradigm of cancer research, and the use of correct,
                       contamination-free cell lines is essential for accurate and reproducible experimental results.
                       Studies have found that at least a quarter of cell lines are used incorrectly in applied research,
-                      but judging the validity of cell lines is still underappreciated. We provide a novel improved cell
-                      line authentication method by constructs the maximum unstable unit with priori cell line topology,
-                      genotype and expression.
+                      but judging the validity of cell lines is still underappreciated. Some methods based on SNP or
+                      expression have been proposed to authenticate cell lines. Those existing methods are mainly SNP or
+                      expression based, which cannot provide accurate resolution from closely related cell lines. We
+                      provide a novel improved method called CCLHunter which constructs the maximum unstable unit with
+                      priori cell line topology, variant and expression profile to authenticate cell lines. Using BAM as
+                      input, CCLHunter can accurately and sensitively authenticate cell lines from the consanguineous
+                      lineage or even different tissues in the same individual.
                     </div>
                   </v-col>
                 </v-row>
               </v-sheet>
 
             </v-col>
-            <v-col xl="6" lg="6" md="6" sm="12" cols="12">
+            <v-col cols="12" lg="6" md="6" sm="12" xl="6">
               <v-sheet class="z-transparent">
                 <v-row>
                   <v-col cols="10" offset="1">
@@ -57,12 +62,12 @@
                         <v-card-title :style="{'color':$store.state.mainColor}">Statistics</v-card-title>
                         <v-row no-gutters>
                           <v-col cols="6">
-                            <v-hover v-slot="{ hover }" v-for="item in statsdata" :key="item.name">
+                            <v-hover v-for="item in statsdata" :key="item.name" v-slot="{ hover }">
                               <v-card
                                   :elevation="hover?4:0"
                                   :to="item.to"
-                                  min-height="150"
                                   class="mx-2 my-4 px-3 pt-8"
+                                  min-height="150"
                                   tile
                               >
 
@@ -88,14 +93,14 @@
                             </v-hover>
                           </v-col>
                           <v-divider vertical></v-divider>
-                          <v-col cols="6"  align-self="center">
+                          <v-col align-self="center" cols="6">
 
 
                             <v-hover v-slot="{ hover }">
                               <v-card
-                                  class="mx-2 py-16"
-
                                   :elevation="hover?4:0"
+
+                                  class="mx-2 py-16"
                                   @click="$router.push('/task')">
 
 
@@ -106,7 +111,8 @@
                                   >
 
 
-                                    <v-icon :color="$store.state.mainColor" size="128">mdi-briefcase-upload-outline</v-icon>
+                                    <v-icon :color="$store.state.mainColor" size="128">mdi-briefcase-upload-outline
+                                    </v-icon>
 
                                   </div>
                                   <v-divider dark></v-divider>
@@ -116,12 +122,6 @@
 
                               </v-card>
                             </v-hover>
-
-
-
-
-
-
 
 
                           </v-col>
@@ -137,7 +137,7 @@
           <v-row>
             <v-col cols="12">
               <v-row>
-                <v-col cols="12" class="px-16 text-left">
+                <v-col class="px-16 text-left" cols="12">
                                 <span class='white--text'> <b>How to Cite:</b> Database Resources of the National Genomics Data Center, China National Center for Bioinformation in 2022. Nucleic Acids Res 2022, 50(D1):D27-D38. [PMID=<a
                                     href="https://pubmed.ncbi.nlm.nih.gov/34718731/"
                                     style="text-decoration: none;color: white"
@@ -191,8 +191,8 @@
                   <v-sheet class="px-2 mx-auto overflow-auto">
 
                     <a href="https://www.revolvermaps.com/livestats/5gefi9e96f9/"><img
-                        src="//rf.revolvermaps.com/h/m/a/0/ff0000/128/10/5gefi9e96f9.png" width="420" height="200"
-                        alt="Map" style="border:0;"></a>
+                        alt="Map" height="200" src="//rf.revolvermaps.com/h/m/a/0/ff0000/128/10/5gefi9e96f9.png"
+                        style="border:0;" width="420"></a>
                   </v-sheet>
                 </v-col>
               </v-row>
@@ -223,9 +223,9 @@
                       >
                         <v-row>
                           <v-col class="text-left" cols="12">
-                            <a target="_blank" :href="item.link" style="text-decoration: none;color: black">
+                            <a :href="item.link" style="text-decoration: none;color: black" target="_blank">
                               <span class="text-body-1 font-weight-bold">{{ item.text }}</span> <img
-                                :style="{height: '15px',backgroundColor:item.bgcolor}" :src="item.img">
+                                :src="item.img" :style="{height: '15px',backgroundColor:item.bgcolor}">
                             </img>
                             </a>
                           </v-col>
@@ -313,7 +313,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
 .z-transparent {
   background-color: transparent !important;
