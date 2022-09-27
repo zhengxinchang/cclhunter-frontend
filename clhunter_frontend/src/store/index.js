@@ -9,7 +9,7 @@ export default new Vuex.Store({
     mainColor:"#0c2740",
     stats:null,
     currtab:0,
-    logo: require('../assets/logo.png'),
+    logo: require('../assets/logo2.png'),
     cellbarcode:null,
     // cellsnpbarcodes_pos:null,
     cellbarcode2ideogram:{
