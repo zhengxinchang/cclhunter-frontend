@@ -8,7 +8,7 @@ module.exports = {
   devServer:{
     proxy:{
       '/cclhunter/api': {
-        target: 'http://192.168.74.42:5598/',
+        target: 'http://192.168.164.80:5598/',
         ws: true,
         changOrigin: true,
         // pathRewrite: {
