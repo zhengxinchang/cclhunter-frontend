@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+import store from '../store'
 import home from '../components/home'
 import home2 from '../components/home'
 import barcodes from "@/components/barcodes";
@@ -8,14 +8,15 @@ import celllineList from "@/components/celllineList";
 import cellDetailPage from "@/components/cellDetailPage";
 import taskPanel from "../components/taskPanel";
 import annotatedResultPage from "../components/annotatedResultPage";
+import downloads from "../components/downloads";
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: home
+    redirect:"/home",
   },
   {
     path: '/home',
@@ -43,17 +44,30 @@ const routes = [
   {
     path: '/barcodes',
     name: 'barcodes',
-    component:barcodes
+    component:barcodes,
+    beforeEnter: (to, from,next) => {
+      store.state.currtab=1;
+      next();
+    },
   },
   {
     path: '/celllinelist',
     name: 'celllineList',
-    component:celllineList
+    component:celllineList,
+    beforeEnter: (to, from,next) => {
+      store.state.currtab=1;
+      next();
+    },
   },
   {
     path: '/celllinelist/:cid',
     name: 'celllinedetail',
     component:cellDetailPage
+  },
+  {
+    path: '/downloads',
+    name: 'downloads',
+    component:downloads
   },
 
 
