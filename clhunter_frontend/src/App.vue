@@ -28,7 +28,6 @@
           <v-tabs
               v-model="$store.state.currtab"
               :background-color="$store.state.mainColor"
-              align="center"
               centered
               dark
               grow
@@ -41,24 +40,82 @@
               <v-icon>mdi-home</v-icon> &nbsp; Home
             </v-tab>
 
+
+            <v-tab
+                class="px-0"
+            >
+              <v-menu offset-y open-on-hover close-delay="400">
+
+
+                <template v-slot:activator="{on,attrs}">
+
+                  <v-btn
+
+                   @click="(e)=>{e.stopPropagation()}"
+
+                  v-on="on"
+                  :color="$store.state.mainColor"
+                  v-bind="attrs"
+                  elevation="0"
+                  height="100%"
+                  width="100%"
+                  dark
+                  >
+                    <v-icon>mdi-bookmark-box-multiple-outline</v-icon> &nbsp; Browse  <v-icon>mdi-menu-down</v-icon>
+                  </v-btn>
+
+                </template>
+
+
+                <v-list
+                    :color="$store.state.mainColor"
+                    class="text-left"
+                    dark
+                >
+                  <v-list-item
+                      to="/barcodes"
+                  >
+                    <v-list-item-title>
+                      <v-icon>mdi-barcode mdi-rotate-135</v-icon>
+                      &nbsp; SNP Barcodes
+                    </v-list-item-title>
+                  </v-list-item>
+                  <v-list-item
+                      to="/celllinelist"
+
+                  >
+                    <v-list-item-title>
+                      <v-icon>mdi-satellite-uplink</v-icon>
+                      &nbsp; Cell Line List
+                    </v-list-item-title>
+                  </v-list-item>
+
+                </v-list>
+
+
+              </v-menu>
+
+
+            </v-tab>
+
             <v-tab
                 to="/task"
             >
               <v-icon>mdi-toolbox-outline</v-icon> &nbsp; Task Submission
             </v-tab>
-            <v-tab
-                to="/barcodes"
-            >
-              <v-icon>mdi-barcode mdi-rotate-135</v-icon> &nbsp; SNP Barcodes
-            </v-tab>
+<!--            <v-tab-->
+<!--                to="/barcodes"-->
+<!--            >-->
+<!--              <v-icon>mdi-barcode mdi-rotate-135</v-icon> &nbsp; SNP Barcodes-->
+<!--            </v-tab>-->
 
 
 
-            <v-tab
-                to="/celllinelist"
-            >
-              <v-icon>mdi-satellite-uplink</v-icon> &nbsp; Cell Line List
-            </v-tab>
+<!--            <v-tab-->
+<!--                to="/celllinelist"-->
+<!--            >-->
+<!--              <v-icon>mdi-satellite-uplink</v-icon> &nbsp; Cell Line List-->
+<!--            </v-tab>-->
 
             <v-tab
                 to="/downloads"
@@ -68,7 +125,7 @@
             <v-tab
                 to="/help"
             >
-              <v-icon>mdi-heart</v-icon> &nbsp; Help
+              <v-icon>mdi-heart</v-icon> &nbsp; Documentation
             </v-tab>
 
           </v-tabs>
