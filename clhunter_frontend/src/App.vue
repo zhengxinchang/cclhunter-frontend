@@ -32,10 +32,12 @@
               dark
               grow
               show-arrows
+
           >
 
             <v-tab
                 to="/home"
+                style="text-transform: none"
             >
               <v-icon>mdi-home</v-icon> &nbsp; Home
             </v-tab>
@@ -43,16 +45,13 @@
 
             <v-tab
                 class="px-0"
+                style="text-transform: none"
             >
               <v-menu offset-y open-on-hover close-delay="400">
 
-
                 <template v-slot:activator="{on,attrs}">
-
                   <v-btn
-
                    @click="(e)=>{e.stopPropagation()}"
-
                   v-on="on"
                   :color="$store.state.mainColor"
                   v-bind="attrs"
@@ -60,6 +59,7 @@
                   height="100%"
                   width="100%"
                   dark
+                   style="text-transform: none"
                   >
                     <v-icon>mdi-bookmark-box-multiple-outline</v-icon> &nbsp; Browse  <v-icon>mdi-menu-down</v-icon>
                   </v-btn>
@@ -75,7 +75,7 @@
                   <v-list-item
                       to="/barcodes"
                   >
-                    <v-list-item-title>
+                    <v-list-item-title class="text-body-2">
                       <v-icon>mdi-barcode mdi-rotate-135</v-icon>
                       &nbsp; SNP Barcodes
                     </v-list-item-title>
@@ -84,7 +84,7 @@
                       to="/celllinelist"
 
                   >
-                    <v-list-item-title>
+                    <v-list-item-title  class="text-body-2">
                       <v-icon>mdi-satellite-uplink</v-icon>
                       &nbsp; Cell Line List
                     </v-list-item-title>
@@ -100,6 +100,7 @@
 
             <v-tab
                 to="/task"
+                style="text-transform: none"
             >
               <v-icon>mdi-toolbox-outline</v-icon> &nbsp; Task Submission
             </v-tab>
@@ -119,11 +120,13 @@
 
             <v-tab
                 to="/downloads"
+                style="text-transform: none"
             >
               <v-icon>mdi-download-box-outline</v-icon> &nbsp; Downloads
             </v-tab>
             <v-tab
                 to="/help"
+                style="text-transform: none"
             >
               <v-icon>mdi-heart</v-icon> &nbsp; Documentation
             </v-tab>
